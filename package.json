@@ -5,6 +5,8 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@mdi/js": "^7.2.96",
+    "@mdi/react": "^1.6.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -50,6 +52,8 @@
     ]
   },
   "react-dotenv": {
-    "whitelist": ["BASE_URI"]
+    "whitelist": [
+      "BASE_URI"
+    ]
   }
 }

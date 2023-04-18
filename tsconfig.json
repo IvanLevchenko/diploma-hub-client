@@ -6,9 +6,11 @@
       "dom.iterable",
       "esnext"
     ],
+    "strictPropertyInitialization": false,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -19,6 +21,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "paths": {
+      "@backend/*": ["../diploma-hub/src/types/*"]
+    }
   },
   "include": [
     "src"

@@ -5,5 +5,7 @@
 }
 
 body {
-    background: linear-gradient(0deg, #9f9f9f, #f4f4f4);
+    /*background: linear-gradient(0deg, #9f9f9f, #f4f4f4);*/
+    /*background: linear-gradient(0deg, #a0b8cc, #ffffff);*/
+    background: #eceff4;
 }

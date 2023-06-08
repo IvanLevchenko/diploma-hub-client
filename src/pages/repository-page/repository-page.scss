@@ -1,0 +1,37 @@
+.container {
+  margin-top: 100px;
+
+  .container__substring {
+    display: flex;
+    align-items: center;
+  }
+
+  .container__repository-list {
+    display: flex;
+    gap: 30px;
+  }
+
+  .container__dropdown-panel {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 50px 0;
+
+    .container__dropdown-panel-dropdown {
+      padding: 10px;
+      border-radius: 5px;
+      transition: 0.3s;
+      user-select: none;
+
+      .container__dropdown-panel-dropdown-item {
+        align-items: center;
+        display: flex;
+      }
+
+      &:hover {
+        background: rgb(217, 217, 217);
+        transition: 0.3s;
+      }
+    }
+  }
+}

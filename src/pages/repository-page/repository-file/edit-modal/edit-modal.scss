@@ -1,0 +1,13 @@
+.edit-modal {
+
+  .edit-modal__filename {
+    width: 100%;
+  }
+
+  .edit-modal__buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+}

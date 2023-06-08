@@ -1,0 +1,50 @@
+.filter-modal__modal {
+  position: absolute;
+  top: 0;
+  right: -180px;
+  padding: 20px;
+  background: white;
+  z-index: 2;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  box-shadow: 10px 10px 100px 10px darkgrey;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 0;
+    height: 0;
+    border-bottom: 15px solid transparent;
+    border-top: 15px solid transparent;
+    border-right: 15px solid white;
+  }
+
+  .filter-modal__modal-dates {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+  .filter-modal__modal-dates-input {
+  }
+  }
+
+
+  .filter-modal__modal-select {
+  }
+}
+
+.closed {
+  display: none;
+}
+
+.filter-modal__wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}

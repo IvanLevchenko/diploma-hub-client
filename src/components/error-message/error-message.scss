@@ -1,0 +1,46 @@
+.error-message__error-message {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 100px;
+  z-index: 99999999;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 200px;
+  padding: 20px;
+  background: #f8dfdf;
+  font-size: 1.1em;
+  color: #591515;
+  border-radius: 5px;
+
+  .error-message__close-button {
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    margin: 10px;
+    background: none;
+
+    &:hover {
+      background: rgba(190, 54, 54, 0.2);
+    }
+  }
+}
+
+.disappear {
+  animation: fadeAway 0.5s forwards;
+}
+
+@keyframes fadeAway {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0 ;
+  }
+}
+
+.ui.message {
+  position: absolute;
+}

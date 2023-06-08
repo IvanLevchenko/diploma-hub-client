@@ -1,0 +1,16 @@
+.create-repo-form {
+  padding: 20px;
+
+  .create-repo-form__form {
+    background: white;
+    height: fit-content;
+    padding: 15px;
+    border-radius: 10px;
+
+    .create-repo-form__form-field {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 0;
+    }
+  }
+}

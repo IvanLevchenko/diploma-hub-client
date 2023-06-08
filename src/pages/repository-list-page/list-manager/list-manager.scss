@@ -1,0 +1,49 @@
+.list-manager {
+  margin: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .list-manager__options-wrapper {
+    position: relative;
+
+    .list-manager__options {
+      display: flex;
+      align-items: center;
+
+      .list-manager__options-clear-icon {
+        position: absolute;
+        right: 80px;
+        top: 50%;
+        color: gray;
+        transform: translate(0, -50%);
+        cursor: pointer;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .list-manager__options-filter-button-bubble {
+        &::after {
+          content: "";
+          position: absolute;
+          top: -1px;
+          right: -1px;
+          width: 10px;
+          height: 10px;
+          background: #6464ff;
+          border-radius: 50%;
+        }
+      }
+
+      .list-manager__options-filter-button {
+        margin-left: 15px;
+      }
+
+      .list-manager__options-clear {
+        margin-left: 15px;
+      }
+    }
+  }
+}

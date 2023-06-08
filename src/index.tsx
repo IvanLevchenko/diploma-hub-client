@@ -1,19 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "semantic-ui-css/semantic.min.css";
+
+import WithLsi from "./hocs/with-lsi/with-lsi";
+import ErrorBoundary from "./hocs/error-boundary/error-boundary";
+
+import reportWebVitals from "./reportWebVitals";
+import routes from "./constants/routes";
+import "./index.css";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  document.getElementById("root") as HTMLElement
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+const router = createBrowserRouter(routes);
+
+root.render(
+  <ErrorBoundary>
+    <WithLsi>
+      <RouterProvider router={router} />
+    </WithLsi>
+  </ErrorBoundary>
+);
+
 reportWebVitals();

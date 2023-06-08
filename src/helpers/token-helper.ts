@@ -1,5 +1,7 @@
-import Calls from "../calls/calls";
 import { AxiosResponse } from "axios";
+import { IsAuthorizedResponse } from "../../shared-types/types/is-authorized-response";
+
+import Calls from "../calls/calls";
 
 class TokenHelper {
   public setToken(token: string): void {
@@ -14,11 +16,11 @@ class TokenHelper {
     return localStorage.getItem("token");
   }
 
-  public isTokenValid(): Promise<{ isAuthorized: boolean }> {
+  public isTokenValid(): Promise<IsAuthorizedResponse> {
     const authorizationHeader = `Bearer ${this.getToken()}`;
     return Calls.auth
       .isAuthorized(authorizationHeader)
-      .then((response: AxiosResponse<{ isAuthorized: boolean }>) => {
+      .then((response: AxiosResponse<IsAuthorizedResponse>) => {
         return response.data;
       });
   }

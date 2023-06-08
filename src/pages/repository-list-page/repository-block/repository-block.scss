@@ -1,0 +1,25 @@
+.repository {
+  width: 250px;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  padding: 10px;
+
+  :hover .repository__header {
+    text-decoration: underline;
+  }
+
+  .repository__header {
+    text-decoration: none;
+    font-size: 1.3em;
+  }
+
+  .repository__info {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    padding: 0 0 5px 5px;
+    display: flex;
+    align-items: center
+  }
+}

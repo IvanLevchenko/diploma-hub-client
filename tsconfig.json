@@ -21,11 +21,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": ".",
     "paths": {
-      "@backend/*": ["../diploma-hub/src/types/*"]
-    }
+      "@backend/*": ["./shared-types/*"],
+  }
   },
   "include": [
-    "src"
+    "src",
   ]
 }

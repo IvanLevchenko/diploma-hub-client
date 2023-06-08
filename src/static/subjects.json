@@ -1,14 +1,30 @@
 [
   {
     "name": "Комп'ютерні системи та мережі",
-    "color": "#B6C0FA"
+    "translate": {
+      "en": "Computer systems & networks"
+    },
+    "color": "violet"
   },
   {
     "name": "Програмування",
-    "color": "#9AD9FF"
+    "translate": {
+      "en": "Programming"
+    },
+    "color": "teal"
   },
   {
     "name": "Схемотехніка",
-    "color": "#F3C272"
+    "translate": {
+      "en": "Schematic engineering"
+    },
+    "color": "olive"
+  },
+  {
+    "name": "Дипломний проєкт",
+    "translate": {
+      "en": "Diploma project"
+    },
+    "color": "black"
   }
 ]

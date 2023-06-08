@@ -1,0 +1,29 @@
+.plagiarism-modal {
+  background: white;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+
+
+  .plagiarism-modal__close {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  .plagiarism-modal__chart {
+    width: 35%;
+  }
+}

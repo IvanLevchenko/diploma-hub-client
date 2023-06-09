@@ -1,9 +1,12 @@
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { Icon } from "@mdi/react";
 import { mdiClose } from "@mdi/js";
 import "react-circular-progressbar/dist/styles.css";
 
+import LsiContext from "../../../lsi/lsi-context";
+
+import Lsi from "./lsi";
 import "./plagiarism-modal.scss";
 
 interface Props {
@@ -15,6 +18,8 @@ interface Props {
 type Color = "green" | "orange" | "red";
 
 function PlagiarismModal(props: Props): JSX.Element {
+  const { lang } = useContext(LsiContext);
+
   useEffect(() => {
     return;
   }, [props.percent, props.passed]);
@@ -31,10 +36,12 @@ function PlagiarismModal(props: Props): JSX.Element {
 
   return (
     <div className="plagiarism-modal">
-      <div className="plagiarism-modal__close" onClick={props.onClose}>
-        <Icon path={mdiClose} size="30" />
+      <div className="plagiarism-modal__close">
+        <div onClick={props.onClose}>
+          <Icon path={mdiClose} size="30" />
+        </div>
       </div>
-      <p>{props.passed ? "Passed" : "Not passed"}</p>
+      <p>{props.passed ? Lsi.passed[lang] : Lsi.notPassed[lang]}</p>
       <div className="plagiarism-modal__chart">
         <CircularProgressbar
           styles={buildStyles({

@@ -3,9 +3,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   .list-manager__options-wrapper {
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
 
     .list-manager__options {
       display: flex;

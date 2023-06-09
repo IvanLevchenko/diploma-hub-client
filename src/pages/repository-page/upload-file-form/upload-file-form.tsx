@@ -1,12 +1,15 @@
 import { Form, Loader, Modal } from "semantic-ui-react";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { AxiosError, AxiosResponse } from "axios";
 import { FileCreateDtoOut } from "../../../../shared-types/dto/file";
 
 import { ErrorMap } from "../../../calls/interfaces/error-map";
 import PlagiarismModal from "../plagiarism-modal/plagiarism-modal";
+import ErrorMessage from "../../../components/error-message/error-message";
+import LsiContext from "../../../lsi/lsi-context";
 
+import Lsi from "./lsi";
 import Calls from "../../../calls/calls";
 import "./upload-file-form.scss";
 
@@ -23,6 +26,7 @@ const formIds = {
 };
 
 function UploadFileForm(props: Props): JSX.Element {
+  const { lang } = useContext(LsiContext);
   const [params] = useSearchParams();
   const [file, setFile] = useState<File>();
   const [fileName, setFileName] = useState<string>();
@@ -107,7 +111,7 @@ function UploadFileForm(props: Props): JSX.Element {
         onSubmit={handleSubmit}
       >
         <Form.Input
-          label="Name of file"
+          label={Lsi.name[lang]}
           id={formIds.filename}
           onChange={handleChange}
           required
@@ -115,16 +119,16 @@ function UploadFileForm(props: Props): JSX.Element {
         <Form.Input
           id={formIds.file}
           accept="application/pdf"
-          label="Select file (*.pdf)"
+          label={Lsi.select[lang]}
           type="file"
           onChange={handleChange}
           required
         ></Form.Input>
         <div className="form-wrapper__form-buttons">
           <Form.Button color="blue" type="submit" disabled={disabledButton}>
-            Submit
+            {Lsi.submit[lang]}
           </Form.Button>
-          <Form.Button onClick={props.onClose}>Cancel</Form.Button>
+          <Form.Button onClick={props.onClose}>{Lsi.cancel[lang]}</Form.Button>
         </div>
         {loader && <Loader active={loader} />}
         {plagiarismModal && plagiarismData && (
@@ -135,12 +139,12 @@ function UploadFileForm(props: Props): JSX.Element {
           />
         )}
       </Form>
-      {/*{errorMessage && (*/}
-      {/*  <ErrorMessage*/}
-      {/*    onClose={handleRemoveErrorMessage}*/}
-      {/*    message={errorMessage}*/}
-      {/*  />*/}
-      {/*)}*/}
+      {errorMessage && (
+        <ErrorMessage
+          onClose={handleRemoveErrorMessage}
+          message={errorMessage}
+        />
+      )}
     </Modal>
   );
 }
